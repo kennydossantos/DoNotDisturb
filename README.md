@@ -2,7 +2,7 @@
 
 This project involves an ESP32 module combined with a 2.8" TFT Touch display, functioning as a door sign for a home office. The system indicates whether people are allowed to enter the room based on different states displayed on the TFT screen.
 
-![NTI Banner](img/NTIBanner.png)
+![NTI Banner](NTIBanner.png)
 
 ## Features
 
