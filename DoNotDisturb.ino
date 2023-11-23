@@ -55,8 +55,8 @@
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Replace with your network credentials
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const char* ssid     = "Dos Santos Family"; // NTIG Guest
-const char* password = "ri6f9n4e"; //TeknikPassion ri6f9n4e
+const char* ssid     = "WIFI NAME HERE";
+const char* password = "WIFI PASSWORD HERE"; 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 const char* ntpServer = "pool.ntp.org";
