@@ -5,50 +5,6 @@
 // TFT_eSPI - Version: Latest 
 #include <TFT_eSPI.h>
 
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//
-//  This is the firmware for an ESP32 module combined with a 2.8" TFT Touchdisplay (SPI)
-//  The purpose of the device is to function as a door sign of your home office which
-//  indicates if people may enter the room.
-//  If you do not want to be disturbed the display shows a red sign with a user definable text.
-//  If you may allow to enter the display shows an orange sign with a different text.
-//  if you allow people to enter the display shows a green sign with another text.
-//  In red or orange state people may ask to get permission to enter by pressing the touch display.
-//  A pending request is indicated by a blue background color of the display.
-//
-//  The device is controlled via a web interface using its WLAN capabilities. It must be connected to
-//  your local WLAN. You can use any browser (PC, Tablet, Smartphone) for the UI.
-//  The ESP32 runs a web server with a html page showing three buttons to set green, red or orange state.
-//  There is another box shown which indicates that someone has requested to enter.
-//  In red or orange state you may start a countdown timer. Its start value is entered by pressing
-//  one of three buttons on the web page: "5" and "10" are adding 5 or 10 minutes to the current
-//  time left. "00" resets the timer.
-//  the time left (in minutes) is also displayed on the TFT display (door sign). When the timer
-//  elapses the sign is automatically switched in green state.
-//  You can end the timer by clicking on one of the three state buttons.
-//
-//  You can edit the texts which are displayed on the web surface as well as those shown on the
-//  TFT Display in the #define section. But the space is limited!
-//  DO NOT FORGET TO EDIT THE WLAN CREDENTIALS!!!
-//
-//  Know problems:
-//  The web server is very limited. It can only connect to a single client. If a client browser
-//  is holding the connection instead of breaking it after receiving, no other client can connect
-//  The device is not responsive before it can connect to a NTS server.
-//
-//  This sketch needs the following libraries to be installed (use the library manager):
-//      ESP32 core
-//      SPI, Wifi, WiFiUdp and a specifci ESP32 version of time.h (all part of the ESP32 package)
-//      TFT_eSPI
-//  The time.h of ESp32 core does have support for NTS over WLAN (time synchronisation) see google
-//  for more information. I used this functionality to display time and date on the web GUI
-//
-//  The TFT library functions do need a local font file "MyFont.h" to be copied from the lib package
-//  directory to the sketch diractory
-//  Make sure all the display driver and pin comnenctions are correct by
-//  editting the User_Setup.h file in the TFT_eSPI library folder:
-//
 //  pin on TFT    pin on ESP32 Dev Kit
 //      VCC         V5 (+5 Volt)
 //      GND         GND (DO NOT USE THE ONE NEXT TO V5!)
@@ -64,26 +20,6 @@
 //      T_DIN       G23 (SPI MOSI)
 //      T_DO        G19 (SPI MISO)
 //      T_IRQ       not used, leave open!
-//
-//  Use the AZ Delivery version of the ESP32 called "ESP-32 Dev Kit C" because you need many IO pins
-//  Use a TFT touch 2.8"" with 240 x 320 pixel and PBC ILI9341 Controller:
-//  E.g. Amazon https://www.amazon.de/gp/product/B017FZTIO6
-//  and for ESP32 https://www.amazon.de/gp/product/B071P98VTG
-//  The device can be powered by any USB wall plug power supply or powerbanks
-//  See article on DesignSpark for 3D printable case for this combination
-//
-//        <Copyright Information>
-//  You can freely use this code, change it or eat it without explicit permission and under
-//  Fair license:
-//  Usage of the works is permitted provided that this instrument is retained with the works,
-//  so that any entity that uses the works is notified of this instrument.
-//  DISCLAIMER: THE WORKS ARE WITHOUT WARRANTY.
-//
-//  See license types for included libraries which are not my ip.
-//
-//  Please note that it is your responsibility to check the consequences of using this code.
-//  I do not care and do not pay whatsoever if anyone is kicking your door because of the sign or
-//  if noone enters to reanimate you in case of a heartattack because the sign says "do not enter!"
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -105,8 +41,8 @@
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // Replace with your network credentials
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const char* ssid     = "Dos Santos Family";
-const char* password = "ri6f9n4e";
+const char* ssid     = "";
+const char* password = "";
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 const char* ntpServer = "pool.ntp.org";
